@@ -7,6 +7,7 @@
         <groupId>org.opc.hiron</groupId>
         <artifactId>hiron-parent</artifactId>
         <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
 
     <groupId>org.opc.hiron.modules</groupId>
@@ -14,4 +15,11 @@
     <!-- <version>1.0.0-SNAPSHOT</version> -->
     <packaging>pom</packaging>
     <name>Sample1 module</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.eclipse.osgi</groupId>
+            <artifactId>org.eclipse.osgi</artifactId>
+        </dependency>
+    </dependencies>
 </project>

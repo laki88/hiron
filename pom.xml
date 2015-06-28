@@ -13,5 +13,20 @@
 
     <modules>
         <module>modules/sample1</module>
+        <module>distribution/standalone</module>
     </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.eclipse.osgi</groupId>
+                <artifactId>org.eclipse.osgi</artifactId>
+                <version>${osgi.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <properties>
+        <osgi.version>3.7.1</osgi.version>
+    </properties>
 </project>
