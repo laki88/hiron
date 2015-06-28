@@ -6,8 +6,12 @@
 
 
     <groupId>org.opc.hiron</groupId>
-    <artifactId>hiron</artifactId>
+    <artifactId>hiron-parent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Hiron Server</name>
+
+    <modules>
+        <module>modules/sample1</module>
+    </modules>
 </project>
