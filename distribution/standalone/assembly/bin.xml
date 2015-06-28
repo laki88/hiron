@@ -21,17 +21,19 @@
     </dependencySets>
     <fileSets>
         <fileSet>
-            <directory>resources</directory>
+            <directory>${basedir}</directory>
             <outputDirectory>${plugin.name}</outputDirectory>
             <includes>
+                <include>*</include>
                 <include>file-example.xml</include>
                 <include>file-example.png</include>
             </includes>
         </fileSet>
         <fileSet>
-            <directory>target</directory>
+            <directory>${basedir}</directory>
             <outputDirectory>${plugin.name}</outputDirectory>
             <includes>
+                <include>*</include>
                 <include>build-*.jar</include>
             </includes>
         </fileSet>
