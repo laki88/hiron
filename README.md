@@ -1,4 +1,4 @@
 # hiron
 Hiron Server
 
-is a Application Server which handles htpp based requests
+is an Application Server which handles http based requests
