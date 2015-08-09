@@ -29,32 +29,21 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <extensions>true</extensions>
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
-                        <Private-Package>org.wso2.carbon.dataservices.core.internal</Private-Package>
+                        <!--<Private-Package>org.server.hiron</Private-Package>-->
                         <Export-Package>
-                            !org.wso2.carbon.dataservices.core.internal,
-                            org.wso2.carbon.dataservices.core.*;version="${project.version}"
+                            org.server.hiron;version="${project.version}"
                         </Export-Package>
-                        <Import-Package>
-
-                        </Import-Package>
-                        <DynamicImport-Package>*</DynamicImport-Package>
-                        <Axis2Deployer>DataServicesDeployer</Axis2Deployer>
-                        <Axis2RequiredServices>
-                            org.wso2.carbon.dataservices.core.internal.DSDummyService,
-                            org.wso2.carbon.transaction.manager.TransactionManagerDummyService
-                        </Axis2RequiredServices>
+                        <!--<Import-Package>-->
+                            <!--org.server.hiron-->
+                        <!--</Import-Package>-->
+                        <!--<DynamicImport-Package>*</DynamicImport-Package>-->
                     </instructions>
                 </configuration>
             </plugin>
-
-
-
-
         </plugins>
     </build>
 
