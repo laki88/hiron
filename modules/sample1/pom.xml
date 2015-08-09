@@ -13,7 +13,7 @@
     <groupId>org.opc.hiron.modules</groupId>
     <artifactId>org.opc.hiron.server.sample1</artifactId>
     <!-- <version>1.0.0-SNAPSHOT</version> -->
-    <packaging>pom</packaging>
+    <packaging>bundle</packaging>
     <name>Sample1 module</name>
 
     <dependencies>

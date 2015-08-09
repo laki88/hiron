@@ -22,10 +22,19 @@
                 <artifactId>org.eclipse.osgi</artifactId>
                 <version>${osgi.version}</version>
             </dependency>
+
+            <!-- BEGIN SELF DEPENDENCIES -->
+            <dependency>
+                <groupId>org.opc.hiron.modules</groupId>
+                <artifactId>org.opc.hiron.server.sample1</artifactId>
+                <version>${hiron.server.version}</version>
+            </dependency>
+            <!-- END SELF DEPENDENCIES -->
         </dependencies>
     </dependencyManagement>
 
     <properties>
+        <hiron.server.version>${project.version}</hiron.server.version>
         <!-- BEGIN DEPENDENCY VERSIONS -->
         <osgi.version>3.7.1</osgi.version>
         <!-- END DEPENDENCY VERSIONS -->

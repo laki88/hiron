@@ -1,4 +1,4 @@
 #!/bin/sh
 
 
-java -jar ../osgi-framework.jar -console
+java -jar ../lib/osgi-framework.jar -console
