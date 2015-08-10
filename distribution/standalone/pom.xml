@@ -41,10 +41,27 @@
                             <goal>copy-resources</goal>
                         </goals>
                         <configuration>
-                            <outputDirectory>${basedir}/target/hiron-standalone-${project.version}/bin</outputDirectory>
+                            <outputDirectory>${server.directory}/bin</outputDirectory>
                             <resources>
                                 <resource>
                                     <directory>bin/</directory>
+                                    <filtering>true</filtering>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>copy-config.ini</id>
+                        <!-- here the phase you need -->
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${server.directory}/lib/configuration</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>configuration/</directory>
                                     <filtering>true</filtering>
                                 </resource>
                             </resources>
@@ -71,7 +88,7 @@
                                     <type>jar</type>
                                     <!--<classifier> [classifier - optional] </classifier>-->
                                     <overWrite>true</overWrite>
-                                    <outputDirectory>${server.lib.directory}</outputDirectory>
+                                    <outputDirectory>${server.directory}/lib</outputDirectory>
                                     <destFileName>osgi-framework.jar</destFileName>
                                 </artifactItem>
                                 <artifactItem>
@@ -79,13 +96,32 @@
                                     <artifactId>org.opc.hiron.server.sample1</artifactId>
                                     <type>jar</type>
                                     <overWrite>true</overWrite>
-                                    <outputDirectory>${server.lib.directory}</outputDirectory>
+                                    <outputDirectory>${server.directory}/lib</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
+
+            <!--<plugin>-->
+                <!--&lt;!&ndash; Pax Runner Maven plugin &ndash;&gt;-->
+                <!--<groupId>org.ops4j</groupId>-->
+                <!--<artifactId>maven-pax-plugin</artifactId>-->
+                <!--<version>1.4</version>-->
+                <!--<configuration>-->
+                    <!--&lt;!&ndash; Pax Runner version &ndash;&gt;-->
+                    <!--<runner>1.4.0</runner>-->
+                    <!--&lt;!&ndash; OSGi framework type (equinox, felix, knopflerfish) &ndash;&gt;-->
+                    <!--<framework>equinox</framework>-->
+                    <!--<provision>-->
+                        <!--<param> - -log=debug</param>-->
+                        <!--<param> - -workingDirectory=target/runner</param>-->
+                        <!--&lt;!&ndash; bundles that should be installed &ndash;&gt;-->
+                        <!--<param>mvn:org.opc.hiron.modules/org.opc.hiron.server.sample1/${hiron.server.version}@2</param>-->
+                    <!--</provision>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -106,6 +142,6 @@
         </plugins>
     </build>
     <properties>
-        <server.lib.directory>${basedir}/target/hiron-standalone-${project.version}/lib</server.lib.directory>
+        <server.directory>${basedir}/target/hiron-standalone-${project.version}</server.directory>
     </properties>
 </project>
